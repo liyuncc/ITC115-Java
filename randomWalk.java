@@ -1,36 +1,33 @@
-import java.util.Random;
+import java.io.Console;
+import java.util.*;
+public class Exercise8 {
 
-public class Midterm {
-
-
-public static void main(String[] args) {
-	// TODO Auto-generated method stub
-	Random r = new Random();
-	randomWalk();
-	
-
-
-private static void randomWalk() {
-	// TODO Auto-generated method stub
-	int num = 0;
-	int max= 3;
-	int min =-3;
-}
-	while (!(max==min)) {
-		int x = r.nextInt();
-		num++;
-		System.out.println("position = " + x);
-		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.print("max Position"+ RandomWalk());
 	}
 	
-}
+	private static int RandomWalk() {
+		//algorithm
+		int x = 0;
+		int maxPosition = 0;
+		Random rand = new Random();		
+		while(x > -3 && x< 3) {
+			Boolean increase = rand.nextBoolean();
+			if(increase) {
+				x++;
+			}else {
+				x--;
+			}
+			System.out.println("Position"+ x);
+			if(maxPosition < x) {
+				maxPosition = x;
+			}			
+		}
+		
+		return maxPosition;
+	}
 
-
-	
-	
-
-	
-	
 }
 
 	
